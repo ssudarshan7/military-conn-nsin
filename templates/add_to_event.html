@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form action="/accounts/add_to_event/." method="POST" class="form-signin"> <!-- /. at end needed for POST method-->
+    <div class="text-center mb-4">    
+        {% csrf_token %}
+
+        <h1 class="h3 mb-3 font-weight-normal">Add an Event</h1>
+        <div class="form-label-group">
+            <input type = "name" name="eventname" placeholder="Event name" class="form-control" id ="eventname" required><br>
+            <label for="inputName">Event Name</label>
+        </div>
+        <div class="form-label-group">
+            <input type = "city" name="city" placeholder="Location" class="form-control" id="city" required><br>
+            <label for="inputCity"> City </label>
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit"> Submit </button>
+
+   
+</form>
+
+
+    <div>
+
+        <h3>{{message}}</h3>
+
+    </div>
+
+{% endblock %}
+
+

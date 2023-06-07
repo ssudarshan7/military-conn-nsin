@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<h1>Logout</h1>
+
+
+<form action="/accounts/logout/." method="post"> <!-- /. at end needed for POST method-->
+
+    {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal">Are you sure you want to log out?</h1>
+    <button class="btn btn-lg btn-primary btn-block" type="submit"> Yes </button>
+</form>
+
+<form action="/"> 
+    <button class="btn btn-lg btn-primary btn-block" type="submit"> No </button>
+
+</form>
+    
+
+
+<div>
+
+    <h3>{{message}}</h3>
+
+</div>
+
+{% endblock %}
+
+

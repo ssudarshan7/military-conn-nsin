@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form action="/accounts/join_event/." method="POST">
+    {% csrf_token %}
+
+    {% for eventName, eventLocation, eventID in events %}
+    <input type="radio" id="{{eventName}}" name="event" value={{eventID}}>
+    <label for="{{eventName}}"> {{eventName}} at {{eventLocation}}</label><br>
+    {% endfor %}
+    <input type="submit" value="Submit">
+
+
+  </form>
+
+
+    <div>
+
+        <h3>{{message}}</h3>
+
+    </div>
+
+{% endblock %}
+
+

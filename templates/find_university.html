@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<form action="/accounts/find_university/." method="post" class="form-signin"> <!-- /. at end needed for POST method-->
+    <div class="text-center mb-4">    
+        {% csrf_token %}
+
+        <h1 class="h3 mb-3 font-weight-normal">Find Users By University</h1>
+        <div class="form-label-group">
+            <input type = "name" name="uniName" placeholder="University name" class="form-control" id = "uniName" required><br>
+            <label for="uniName">University</label>
+        </div>
+        
+        <button class="btn btn-lg btn-primary btn-block" type="submit"> Submit </button>
+
+   
+</form>
+
+
+    <div>
+
+        <h3>{{message}}</h3>
+
+    </div>
+
+{% endblock %}
+
+
